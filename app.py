@@ -14,11 +14,40 @@ def home():
 
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
-	input_data = pd.read_csv('https://github.com/Ramkumar-datascience/Heroku-app/blob/main/test.csv')
-	b = []
-	for i in input_data['Class']:
+	#input_data = pd.read_csv('https://github.com/Ramkumar-datascience/Heroku-app/blob/main/test.csv')
+	b = ['Benign', 'Benign', 'Benign', 'malignant', 'Benign', 'Benign',
+       'malignant', 'malignant', 'Benign', 'Benign', 'malignant',
+       'Benign', 'Benign', 'malignant', 'Benign', 'Benign', 'malignant',
+       'Benign', 'Benign', 'Benign', 'Benign', 'Benign', 'Benign',
+       'malignant', 'Benign', 'Benign', 'Benign', 'Benign', 'Benign',
+       'malignant', 'malignant', 'malignant', 'malignant', 'Benign',
+       'Benign', 'malignant', 'Benign', 'Benign', 'Benign', 'malignant',
+       'Benign', 'malignant', 'Benign', 'malignant', 'Benign', 'Benign',
+       'Benign', 'Benign', 'Benign', 'Benign', 'Benign', 'malignant',
+       'malignant', 'Benign', 'malignant', 'malignant', 'malignant',
+       'Benign', 'malignant', 'Benign', 'Benign', 'Benign', 'Benign',
+       'Benign', 'malignant', 'malignant', 'Benign', 'Benign', 'Benign',
+       'malignant', 'malignant', 'malignant', 'malignant', 'malignant',
+       'malignant', 'Benign', 'malignant', 'Benign', 'Benign', 'Benign',
+       'Benign', 'Benign', 'Benign', 'malignant', 'malignant', 'Benign',
+       'Benign', 'Benign', 'malignant', 'malignant', 'Benign', 'Benign',
+       'malignant', 'Benign', 'Benign', 'Benign', 'Benign', 'malignant',
+       'Benign', 'Benign', 'Benign', 'Benign', 'Benign', 'Benign',
+       'malignant', 'Benign', 'malignant', 'malignant', 'malignant',
+       'Benign', 'Benign', 'Benign', 'Benign', 'Benign', 'malignant',
+       'malignant', 'Benign', 'Benign', 'Benign', 'Benign', 'Benign',
+       'malignant', 'malignant', 'malignant', 'malignant', 'Benign',
+       'Benign', 'malignant', 'Benign', 'Benign', 'Benign', 'Benign',
+       'Benign', 'malignant', 'Benign', 'malignant', 'malignant',
+       'malignant', 'Benign', 'Benign', 'Benign', 'Benign', 'Benign',
+       'Benign', 'Benign', 'malignant', 'Benign', 'Benign', 'Benign',
+       'malignant', 'Benign', 'Benign', 'malignant', 'Benign', 'Benign',
+       'Benign', 'Benign', 'Benign', 'Benign', 'Benign', 'Benign',
+       'malignant', 'malignant', 'malignant', 'Benign', 'malignant',
+       'Benign', 'Benign', 'Benign', 'malignant', 'Benign']
+	#for i in input_data['Class']:
 		#print(i)
-		b.append(i)
+		#b.append(i)
 	if request.method == 'POST':
 		print('HIII')
 		file = request.form['csv_file']
