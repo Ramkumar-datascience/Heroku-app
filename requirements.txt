@@ -11,4 +11,4 @@ matplotlib>=1.4.3
 pandas>=0.19
 google-auth
 google-auth-oauthlib>=0.4.1
-gspread
+gspread>=3.6.0
