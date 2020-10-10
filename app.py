@@ -5,6 +5,8 @@ import pandas as pd
 from sklearn.metrics import accuracy_score,precision_score
 import csv
 import time
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 
 app = Flask(__name__)
@@ -51,7 +53,13 @@ def predict():
 		#print(i)
 		#b.append(i)
 	if request.method == 'POST':
-		print('HIII')
+		scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
+
+		creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
+
+		client = gspread.authorize(creds)
+		sheet = client.open("Hackathon-results").sheet1
+		
 		file = request.form['csv_file']
 		data = pd.read_csv(file)
 		data1=[]
@@ -73,11 +81,7 @@ def predict():
 		times = time.strftime(" %H:%M:%S", named_tuple)
 		
 		row = [ name + [str(acc)] + [str(pre)] + [str(dates)] + [str(times)]]
-		print('name is :',row)
-		with open('names_list.csv' , 'a') as f:
-			write = csv.writer(f) 
-			#write.writerow(col) 
-			write.writerows(row)
+		sheet.insert_rows(row)
 		
 		return render_template('data.html', data=acc , data2=pre)
 
