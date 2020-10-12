@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme Company Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <style>
+  .result,html {
+  position: absolute;
+  background-color:black;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  
+  #background-image: url("C:/Users/user/Desktop/ramkumar.jpg"); 
+}
+form,html{
+  background-color:pink;
+  background-image: url("https://i.pinimg.com/originals/8a/83/c8/8a83c8978f1b376321fde613d460e88d.gif");
+}
+  </style>
+</head>
+<body class="result" style="color:white">
+
+<div class="jumbotron">
+  <img src="https://www.innomatics.in/wp-content/uploads/2020/08/Innomatics-Research-Labs-Logo-Fevicon-Icon.png" width="150" height="121">
+</div>
+
+  <form class="" action="predict" method="post">
+	
+	 <h1> Your Hackathon Results </h1>
+		
+		please upload .csv file...<br><br>
+		
+		<div class="container">
+		  <div class="row">
+			  <div class="col-sm-3" ></div>
+				<div class="col-sm-3" >
+				  <input type="text" placeholder="Enter Name" name="name" style="color:black">
+				</div>
+				<div class="col-sm-3" >
+				  <input type="text" placeholder="Enter Batch No" name = "batch" style="color:black">
+				</div>
+				<div class="col-sm-3" ></div>
+		  </div><br><br>
+		  <div class="row">
+			  <div class="col-sm-4" ></div>
+				<div class="col-sm-3" >
+				  <input type="file" name="csv_file" id="csv_file" required="True" class="form-control" >
+				</div>
+				<div class="col-sm-2" >
+				  <input type="submit" name="" value="submit" text-align: center; style="color:red">
+				</div>
+				<div class="col-sm-3" ></div>
+		  </div>
+		</div>
+		<br>
+   <br>
+   
+   Accuracy is : 
+   {{ data | safe }}<br><br>
+   Precision is : 
+   {{ data2 | safe }}
+	</form>
+
+</body>
+</html>
