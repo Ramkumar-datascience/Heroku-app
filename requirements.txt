@@ -9,4 +9,7 @@ scipy>=0.15.1
 scikit-learn>=0.18
 matplotlib>=1.4.3
 pandas>=0.19
-
+google-auth
+google-auth-oauthlib>=0.4.1
+gspread>=3.6.0
+betamax==0.8.1
