@@ -14,7 +14,7 @@ model = pickle.load(open('rf_model.pkl', 'rb'))
 
 @app.route('/')
 def home():
-    return render_template('data.html')
+    return render_template('sample.html')
 
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
@@ -83,7 +83,7 @@ def predict():
 		row = [ name + [str(acc)] + [str(pre)] + [str(dates)] + [str(times)]]
 		sheet.insert_rows(row)
 		
-		return render_template('data.html', data=acc , data2=pre)
+		return render_template('sample.html', data=acc , data2=pre)
 
 if __name__ == "__main__":
     app.run(debug=True)
