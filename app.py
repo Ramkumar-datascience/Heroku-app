@@ -52,6 +52,7 @@ def predict():
 	#for i in input_data['Class']:
 		#print(i)
 		#b.append(i)
+		# https://www.youtube.com/watch?v=cnPlKLEGR7E (for Google sheet linking)
 	if request.method == 'POST':
 		scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
 
